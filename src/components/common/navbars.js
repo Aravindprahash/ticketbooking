@@ -28,7 +28,7 @@ const Navbar = ({ searchTerm, setSearchTerm, onSearch }) => {
 
             {/* Links */}
             <div className="d-flex gap-4 text-light flex-column flex-lg-row my-2 my-lg-0">
-              <Link to="/" style={{ textDecoration: "none", color: "lavender", textAlign: "center" }}>
+              <Link to="/home" style={{ textDecoration: "none", color: "lavender", textAlign: "center" }}>
                 🏠<br />Home
               </Link>
               <Link to="/Contactpage" style={{ textDecoration: "none", color: "lavender", textAlign: "center" }}>

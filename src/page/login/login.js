@@ -31,7 +31,7 @@ const handleManualLogin = () => {
   console.log("Google user:", userData);
   alert(`Login Successful (Google): ${userData.name}`);
   localStorage.setItem('isLoggedIn', 'true');
-  navigate('/');
+  navigate('/home');
 }, [navigate]);
 
 

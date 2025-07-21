@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, Navigate } from 'react-router-dom';
 import Contactpage from './components/common/Contactpage';
 import Navbar from './components/common/navbars';
 import Detail from './page/detail/Detail';
@@ -28,7 +28,7 @@ const App = () => {
   return (
     <CartProvider>
       {location.pathname !== '/login' && (
-        <Navbar
+        <Navbar 
           searchTerm={searchTerm}
           setSearchTerm={setSearchTerm}
           onSearch={onSearch}
@@ -36,11 +36,12 @@ const App = () => {
       )}
 
       <Routes>
-        <Route path="/" element={<Products searchTerm={searchTerm} />} />
+        <Route path="/" element={isLoggedIn ? <Navigate to="/home" /> : <Navigate to="/login" />} />
+        <Route path="/home" element={<Products />} />
         <Route path="/Contactpage" element={<Contactpage />} />
         <Route path="/:id" element={<Detail />} />
         <Route path="/Cart" element={<Cart />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </CartProvider>
   );
